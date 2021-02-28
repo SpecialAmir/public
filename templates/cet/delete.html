@@ -1,0 +1,89 @@
+{% extends "layouts/base.html" %}
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="page-inner">
+    <div class="page-header">
+        <h4 class="page-title">Register</h4>
+        <ul class="breadcrumbs">
+            <li class="nav-home">
+                <a href="#">
+                    <i class="flaticon-home"></i>
+                </a>
+            </li>
+            <li class="separator">
+                <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+                <a href="#">Authentication</a>
+            </li>
+            <li class="separator">
+                <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+                <a href="#">Register</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+
+                        {% if msg %}
+                        <span class="text-danger">{{ msg | safe }}</span>
+                        {% else %}
+                        <span>
+                            Confirm Delete
+                        </span>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+
+
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+
+                                        </div>
+
+                                    </div>
+
+                                    <label>Are you sure you want to delete ( {{data.name}} ) wallet with public_key ({{data.public_key}})?? </label><br>
+                                    
+
+
+
+    
+
+                        </div>
+
+                    </div>
+
+            </div>
+
+
+            <div class="card-action">
+                <button type="submit" class="btn btn-danger">Delete</button> &nbsp;&nbsp;
+                <a class="btn btn-secondary" href="{% url 'cet:manage' %}">Cancel</a>
+            
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

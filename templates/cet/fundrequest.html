@@ -1,0 +1,78 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Forms {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-content">
+
+    <!-- [ breadcrumb ] start -->
+    <div class="page-header">
+
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Form Elements</h5>
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="javascript:">Form Componants</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:">Form Elements</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- [ breadcrumb ] end -->
+    <div class="main-body">
+
+        <!-- [ Main Content ] start -->
+
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Fund Request</h5>
+                </div>
+                <div class="card-body">
+                    <h5>Fund Request Details</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Sender's Email address</label>
+                                    {{form.sender}}
+                                    <small id="emailHelp" class="form-text text-muted"></small>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">crypto type</label>
+                                    <label>Coin</label><br>
+                                    {{form.type}} <br>
+                                </div>
+                                <div class="form-group">
+                                    <label>Amount</label>
+                                    {{form.amount}}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Request</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- [ Main Content ] end -->
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
